@@ -1,0 +1,18 @@
+# This is yaml code is for under standing how value works with pods/other kubernetes objects. 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp
+spec:
+  containers:
+    - name: webapp
+      image: kodekloud/event-simulator
+      volumeMounts:
+        - name: web-mount  #this should be same 
+          mountPath: /log
+  volumes:
+    - name: web-mount  #this should be same
+      hostPath:
+        path: /var/log/webapp
+        type: Directory
