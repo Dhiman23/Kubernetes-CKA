@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: task-pv-pod
+spec:
+  volumes:
+    - name: fast-volume
+      persistentVolumeClaim:
+        claimName: fast-pvc-cka
+  containers:
+    - name: task-pv-container
+      image: nginx:latest
+      volumeMounts:
+        - mountPath: "/app/data"
+          name: fast-volume
