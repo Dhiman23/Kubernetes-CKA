@@ -8,8 +8,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   storageClassName: blue-stc-cka
-  persistentVolumeReclaimPolicy: Retain
-  # local path provides nodeAffinity where as hostpath dosen't provide like local  
+  persistentVolumeReclaimPolicy: Retain  
   local:
     path: /tmp/fast-data
   nodeAffinity:
@@ -20,3 +19,5 @@ spec:
           operator: In
           values:
           - controlplane
+
+          
