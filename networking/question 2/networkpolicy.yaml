@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: my-app-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: my-app-deployment  # Selects the pods belonging to my-app-deployment
+  ingress:
+  - from:
+    - podSelector: {}  # Allow incoming traffic from any pod
+    - podSelector:
+        matchLabels:
+          app: trusted  # Allow incoming traffic from pods with label 'app=trusted'
+  egress:
+  - to:
+    - podSelector: {}  # Allow outgoing traffic to any pod
+  policyTypes:
+  - Ingress
+  - Egress  # Denies all other traffic by default
