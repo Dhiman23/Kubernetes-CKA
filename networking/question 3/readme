@@ -1,0 +1,5 @@
+Create a NodePort service named app-service-cka (with below specification) to expose the nginx-app-cka deployment in the nginx-app-space namespace.
+
+port & target port 80
+protocol TCP
+node port 31000

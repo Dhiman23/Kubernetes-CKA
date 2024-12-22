@@ -5,7 +5,10 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: my-app-deployment  # Selects the pods belonging to my-app-deployment
+      app: my-app  # Selects the pods belonging to my-app-deployment
+  policyTypes:
+  - Ingress
+  - Egress  # Denies all other traffic by default
   ingress:
   - from:
     - podSelector: {}  # Allow incoming traffic from any pod
@@ -15,6 +18,4 @@ spec:
   egress:
   - to:
     - podSelector: {}  # Allow outgoing traffic to any pod
-  policyTypes:
-  - Ingress
-  - Egress  # Denies all other traffic by default
+  
