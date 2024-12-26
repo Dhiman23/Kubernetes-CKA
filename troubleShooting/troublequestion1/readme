@@ -1,0 +1,8 @@
+# lastTransitionTime: "2024-12-25T07:35:48Z"
+#     message: '0/2 nodes are available: 1 node(s) didn''t match Pod''s node affinity/selector,
+#       1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane: }. preemption:
+#       0/2 nodes are available: 2 Preemption is not helpful for scheduling.'
+
+#       frontend pod is in Pending state, not running, fix that issue
+
+# Note: Don't remove any specification in frontend pod
