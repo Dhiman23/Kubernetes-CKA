@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"PersistentVolume","metadata":{"annotations":{},"name":"my-pv-cka"},"spec":{"accessModes":["ReadWriteOnce"],"capacity":{"storage":"100Mi"},"hostPath":{"path":"/mnt/data"},"storageClassName":"standard"}}
+  creationTimestamp: "2024-12-27T09:18:19Z"
+  finalizers:
+  - kubernetes.io/pv-protection
+  name: my-pv-cka
+  resourceVersion: "2105"
+  uid: c74ddcb6-de46-4b2f-a63e-61af334cf195
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 100Mi
+  hostPath:
+    path: /mnt/data
+    type: ""
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-path
+  volumeMode: Filesystem
+status:
+  lastPhaseTransitionTime: "2024-12-27T09:18:19Z"
+  phase: Available
