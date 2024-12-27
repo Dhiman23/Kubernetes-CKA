@@ -1,0 +1,23 @@
+piVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"allow-green-and-blue","namespace":"default"},"spec":{"ingress":[{"from":[{"podSelector":{"matchLabels":{"run":"green-pod"}}},{"podSelector":{"matchLabels":{"run":"blue-pod"}}}]}],"podSelector":{"matchLabels":{"run":"red-pod"}},"policyTypes":["Ingress"]}}
+  creationTimestamp: "2024-12-27T16:54:20Z"
+  generation: 1
+  name: allow-green-and-blue
+  namespace: default
+  resourceVersion: "2179"
+  uid: 6e652cb5-6598-4698-b0a7-7f5bbea63a59
+spec:
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          run: green-pod
+  podSelector:
+    matchLabels:
+      run: red-pod
+  policyTypes:
+  - Ingress
