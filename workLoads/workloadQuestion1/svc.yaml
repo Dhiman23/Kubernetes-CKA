@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2024-12-28T08:37:00Z"
+  labels:
+    app: os
+  name: ubuntu-service
+  namespace: default
+  resourceVersion: "4121"
+  uid: 0bf9f760-f9a3-45e4-b652-c457885899c4
+spec:
+  clusterIP: 10.109.223.114
+  clusterIPs:
+  - 10.109.223.114
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: os
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
