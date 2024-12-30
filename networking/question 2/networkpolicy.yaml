@@ -17,5 +17,7 @@ spec:
           app: trusted  # Allow incoming traffic from pods with label 'app=trusted'
   egress:
   - to:
+    - namespaceSelector:
+        kubernetes.io/metadata.name: default
     - podSelector: {}  # Allow outgoing traffic to any pod
   
