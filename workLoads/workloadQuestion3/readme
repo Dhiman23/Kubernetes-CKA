@@ -1,0 +1,9 @@
+# Kubernetes CKA Question
+
+## Task
+
+Create a pod that runs a sleep command for 3600 seconds and has access to the system time.
+
+## Solution
+
+1. Create a YAML file named `pod-sleep.yaml` with the following content:
