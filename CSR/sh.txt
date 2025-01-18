@@ -1,0 +1,46 @@
+apt update && apt install -y nginx
+
+sudo mkdir -p /var/www/sajal-dhiman.in/html
+
+sudo chown -R $USER:$USER /var/www/sajal-dhiman.in/html
+
+sudo chmod -R 755 /var/www/sajal-dhiman.in
+
+
+
+server { listen 80; listen [::]:80;
+
+    root /var/www/sajal-dhiman.in/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name sajal-dhiman.in www.sajal-dhiman.in;
+
+    location / {
+            try_files $uri $uri/ =404;
+    }
+}
+
+vi /etc/nginx/sites-available/sajal-dhiman.in
+
+sudo ln -s /etc/nginx/sites-available/sajal-dhiman.in /etc/nginx/sites-enabled/
+
+sudo nginx -t
+
+sudo systemctl restart nginx
+
+sudo apt update
+sudo apt install certbot
+
+
+sudo certbot certonly
+--agree-tos
+--email sajaldhiman16@gmail.com
+--manual
+--preferred-challenges=dns
+-d *.sajal-dhiman.in
+--server https://acme-v02.api.letsencrypt.org/directory
+
+
+
+Certificate is saved at: /etc/letsencrypt/live/sajal-dhiman.in/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/sajal-dhiman.in/privkey.pem
