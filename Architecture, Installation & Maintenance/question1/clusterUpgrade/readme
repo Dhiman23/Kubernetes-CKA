@@ -1,0 +1,8 @@
+For this question, please set this context (In exam, diff cluster name)
+
+kubectl config use-context kubernetes-admin@kubernetes
+
+
+Upgrade controlplane node kubeadm , cluster and kubelet to next version.
+
+EXAMPLE: If current version is v1.27.1 then upgrade to v1.27.2
